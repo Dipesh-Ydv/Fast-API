@@ -1,0 +1,17 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+app.middleware(
+    CORSMiddleware,
+    allow_origin= [
+        'https://frontend.com', 'http://localhost:3000'
+    ],
+    allow_credential= True,
+    allow_methods= ['GET', 'POST', 'PUT', 'DELETE'],
+    allow_headers= ['*']
+)
+
+
+# define endpoints
