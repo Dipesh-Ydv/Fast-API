@@ -4,7 +4,7 @@ import uuid
 from datetime import datetime
 
 
-class User(SQLModel):
+class User(SQLModel, table=True):
     __tablename__ = "users"
 
     uid: uuid.UUID = Field(
